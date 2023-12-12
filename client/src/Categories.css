@@ -1,0 +1,60 @@
+/* Categories.css */
+
+.categories-container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+}
+
+.categories-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.category-button {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  padding: 10px 20px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 25px;
+  display: block;
+  transition: background-color 0.3s;
+  cursor: pointer;
+  background-color: gray;
+}
+
+.category-button:hover {
+  background-color: palegreen;
+}
+
+/* Dropdown styles */
+.category-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s;
+}
+
+.dropdown-content a:hover {
+  background-color: #f0f0f0;
+}
+
+.category-dropdown:hover .dropdown-content {
+  display: block;
+}
