@@ -70,7 +70,6 @@ const HomePage = () => {
     categoryLink: {
       color: 'white',
       fontSize: '18px',
-      fontFamily: 'Helvetica, sans-serif',
       fontFamily: 'Courier New, sans-serif',
 
       textDecoration: 'none',
@@ -99,7 +98,7 @@ const HomePage = () => {
       borderRadius: '20px', // Adjust the value as needed
     },
     artworkImg: {
-      width: '100%',
+      width: '1000%',
       height: 'auto',
       borderBottom: '1px solid #ddd',
     },
@@ -163,7 +162,7 @@ const HomePage = () => {
             </Link>
           </li>
           <li style={styles.categoryItem}>
-            <Link to="/category2" style={styles.categoryLink}>
+            <Link to="/Categories" style={styles.categoryLink}>
               Category
             </Link>
           </li>
@@ -193,7 +192,7 @@ const HomePage = () => {
       {/* Featured Artworks Section */}
       <section style={styles.featuredArtworks} className="featured-artworks">
         <div style={styles.artwork} className="artwork">
-          <img style={styles.artworkImg} src="artwork1.jpg" alt="Artwork 1" />
+          <img style={styles.artworkImg} src="art22.jpeg" alt="Artwork 1" />
           <div style={styles.artworkDescription} className="artwork-description">
             <h3>Artwork Title 1</h3>
             <p>Description of the artwork goes here.</p>
