@@ -12,14 +12,12 @@ function Login(){
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.post('http://localhost:3001/login', {email, password}) 
+        axios.post('http://127.0.0.1:3001/login', {email, password}) 
         .then(result => {
           console.log(result);
           if (result.data === "success") {
             navigate('/home')
-          } else {
-            console.log("Login failed")
-          }
+          } 
         })
         .catch(err => console.log(err))
     } 

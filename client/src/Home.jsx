@@ -171,6 +171,11 @@ const HomePage = () => {
               Contact
             </Link>
           </li>
+          <li>
+          <Link to="/CustomizeArtwork" style={styles.categoryLink}>
+              Customize Artwork
+          </Link>
+          </li>
           {/* Add more categories as needed */}
         </ul>
       </nav>
