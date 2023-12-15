@@ -1,5 +1,7 @@
+// CustomizationForm.jsx
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import './CSS/CustomizationForm.css'; // Import the CSS file
 
 const CustomizationForm = () => {
   const [firstName, setFirstName] = useState('');
@@ -12,7 +14,7 @@ const CustomizationForm = () => {
 
   useEffect(() => {
     // Fetch the list of artists from the backend (assuming endpoint is available)
-    axios.get('http://127.0.0.1:3001/artists')
+    axios.get('http://127.0.0.1:3001/users')
       .then(response => {
         setArtists(response.data);
       })
@@ -50,9 +52,9 @@ const CustomizationForm = () => {
   };
 
   return (
-    <div>
-      <h2>Customization Form</h2>
-      <form onSubmit={handleSubmit}>
+    <div className="customization-form-container">
+      <h2 className="form-title">Artwork Customization Form</h2>
+      <form onSubmit={handleSubmit} className="customization-form">
         <div>
           <label>First Name:</label>
           <input type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
@@ -82,7 +84,7 @@ const CustomizationForm = () => {
             ))}
           </select>
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit" className="submit-button">Submit</button>
       </form>
     </div>
   );

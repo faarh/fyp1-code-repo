@@ -6,6 +6,8 @@ import Login from './login'
 import Home from './Home'
 import Categories from './Categories';
 import OilPaintings from './OilPaintings'; // Import the new component
+import CustomizationForm from './CustomizeArtwork'; // Import the CustomizationForm component
+
 
 function App() {
   
@@ -19,6 +21,7 @@ function App() {
         <Route path="/home" element={<Home/>}></Route>
         <Route path="/categories" element={<Categories />} />
         <Route path="/categories/oil-paintings" element={<OilPaintings />} /> 
+        <Route path="/CustomizeArtwork" element={<CustomizationForm />} /> {/* Add this line */}
 
       </Routes>
       </BrowserRouter>

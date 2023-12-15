@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import helloImage from './tree.jpeg';
-import helloImage1 from './art222.jpeg';
-import helloImage2 from './art222.jpeg';
+import helloImage from './images/tree.jpeg';
+import helloImage1 from './images/art222.jpeg';
+import helloImage2 from './images/art222.jpeg';
+
 
 const HomePage = () => {
   const styles = {
@@ -58,8 +59,9 @@ const HomePage = () => {
     categoryList: {
       listStyleType: 'none',
       
-      padding: '0',
+      padding: '10px',
       margin: '0',
+
     },
     categoryItem: {
       display: 'inline-block',
@@ -126,7 +128,7 @@ const HomePage = () => {
       <header style={styles.header} className="header">
         <div style={styles.logo} className="logo">
           {/* Your Logo Image */}
-          <img src="logo.png" alt="Logo" />
+          <img src="./images/logo.png}" alt="Carfty Canvas" />
         </div>
         <div style={styles.searchContainer}>
           {/* Search Bar */}
@@ -153,28 +155,28 @@ const HomePage = () => {
         <ul style={styles.categoryList}>
           <li style={styles.categoryItem}>
             <Link to="/category1" style={styles.categoryLink}>
-              Gallery
+              Gallery |
             </Link>
           </li>
           <li style={styles.categoryItem}>
             <Link to="/category2" style={styles.categoryLink}>
-              Popular Artworks
+              Popular Artworks |
             </Link>
           </li>
           <li style={styles.categoryItem}>
             <Link to="/Categories" style={styles.categoryLink}>
-              Category
+              Category |
             </Link>
           </li>
           <li style={styles.categoryItem}>
             <Link to="/category2" style={styles.categoryLink}>
-              Contact
+              Contact |
             </Link>
           </li>
-          <li>
-          <Link to="/CustomizeArtwork" style={styles.categoryLink}>
+          <li style={styles.categoryItem}>
+            <Link to="/CustomizeArtwork" style={styles.categoryLink}>
               Customize Artwork
-          </Link>
+            </Link>
           </li>
           {/* Add more categories as needed */}
         </ul>
@@ -197,7 +199,7 @@ const HomePage = () => {
       {/* Featured Artworks Section */}
       <section style={styles.featuredArtworks} className="featured-artworks">
         <div style={styles.artwork} className="artwork">
-          <img style={styles.artworkImg} src="art22.jpeg" alt="Artwork 1" />
+          <img style={styles.artworkImg} src="./images/eye.jpg" alt="Artwork 1" />
           <div style={styles.artworkDescription} className="artwork-description">
             <h3>Artwork Title 1</h3>
             <p>Description of the artwork goes here.</p>
@@ -208,6 +210,20 @@ const HomePage = () => {
           <img style={styles.artworkImg} src="artwork2.jpg" alt="Artwork 2" />
           <div style={styles.artworkDescription} className="artwork-description">
             <h3>Artwork Title 2</h3>
+            <p>Description of the artwork goes here.</p>
+          </div>
+        </div>
+        <div style={styles.artwork} className="artwork">
+          <img style={styles.artworkImg} src="artwork2.jpg" alt="Artwork 2" />
+          <div style={styles.artworkDescription} className="artwork-description">
+            <h3>Artwork Title 3</h3>
+            <p>Description of the artwork goes here.</p>
+          </div>
+        </div>
+        <div style={styles.artwork} className="artwork">
+          <img style={styles.artworkImg} src="artwork2.jpg" alt="Artwork 2" />
+          <div style={styles.artworkDescription} className="artwork-description">
+            <h3>Artwork Title 4</h3>
             <p>Description of the artwork goes here.</p>
           </div>
         </div>
