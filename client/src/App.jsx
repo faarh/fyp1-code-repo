@@ -7,6 +7,7 @@ import Home from './Home'
 import Categories from './Categories';
 import OilPaintings from './OilPaintings'; // Import the new component
 import CustomizationForm from './CustomizeArtwork'; // Import the CustomizationForm component
+import Calligraphy from './Calligraphy'
 
 
 function App() {
@@ -20,9 +21,9 @@ function App() {
         <Route path="/login" element={<Login/>}></Route>
         <Route path="/home" element={<Home/>}></Route>
         <Route path="/categories" element={<Categories />} />
-        <Route path="/categories/oil-paintings" element={<OilPaintings />} /> 
+        <Route path="/category/OilPaintings" element={<OilPaintings />} /> 
         <Route path="/CustomizeArtwork" element={<CustomizationForm />} /> {/* Add this line */}
-
+        <Route path="/category/Calligraphy.jsx" element={<Calligraphy />} />
       </Routes>
       </BrowserRouter>
   )

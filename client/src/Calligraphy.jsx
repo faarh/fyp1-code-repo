@@ -1,9 +1,9 @@
-// OilPaintings.jsx
+// Calligraphy.jsx
 import React from 'react';
 import secondArtowrk from './images/oil.jpg';
 import secart from './images/oill.jpg';
 
-const OilPaintings = () => {
+const Calligraphy = () => {
   const styles = {
     body: {
       margin: 0,
@@ -28,16 +28,16 @@ const OilPaintings = () => {
   return (
     <div style={styles.body}>
       <div style={styles.container}>
-        <h2>Oil Paintings</h2>
+        <h2>Calligraphy</h2>
         <div style={styles.painting}>
           {/* Replace the image source with your actual image */}
           <img src={secondArtowrk} alt="Oil Painting 1" style={{ width: '100%', height: 'auto' }} />
-          <p>Description of the oilpainting goes here.</p>
+          <p>Description of the calligraphy goes here.</p>
         </div>
         <div style={styles.painting}>
           {/* Replace the image source with your actual image */}
           <img src={secart} alt="Oil Painting 2" style={{ width: '100%', height: 'auto' }} />
-          <p>Description of another oil painting goes here.</p>
+          <p>Description of another calligraphy goes here.</p>
         </div>
         {/* Add more paintings and descriptions as needed */}
       </div>
@@ -45,4 +45,4 @@ const OilPaintings = () => {
   );
 };
 
-export default OilPaintings;
+export default Calligraphy;
