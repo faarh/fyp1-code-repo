@@ -1,8 +1,8 @@
 import React from 'react'
-import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
-import { Link } from "react-router-dom"
-import { useState } from "react"
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import { useState } from "react";
 
 function Login(){
 
@@ -14,13 +14,13 @@ function Login(){
         e.preventDefault()
         axios.post('http://127.0.0.1:3001/login', {email, password}) 
         .then(result => {
-          console.log(result);
-          if (result.data === "success") {
-            navigate('/home')
-          } 
+            console.log(result)
+                if(result.data === "success"){
+                    navigate('/home')
+                }
         })
-        .catch(err => console.log(err))
-    } 
+        .catch (err=> console.log(err))
+    }
     return (
         <div className="d-flex justify-content-center align-items-center bg-secondary vh-100">
             <div className="bg-white p-3 rounded w-25">
@@ -34,7 +34,7 @@ function Login(){
                             className="form-control rounded-0" onChange={(e) => setEmail(e.target.value)} />
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="email">
+                        <label htmlFor="password">
                             <strong>Password</strong>
                         </label>
                         <input type="password" placeholder="Enter Password" name="password"

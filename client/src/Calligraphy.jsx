@@ -15,7 +15,7 @@ const Calligraphy = () => {
     container: {
       display: 'flex',
       flexDirection: 'column',
-      alignItems: 'center',
+
       padding: '300px',
     },
     painting: {

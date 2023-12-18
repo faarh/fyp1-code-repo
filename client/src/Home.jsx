@@ -12,7 +12,7 @@ import logo from './images/logo.png';
 import secondArtowrk from './images/oil.jpg';
 import thirdart from './images/starry.jpg';
 import fourthArtwork from './images/sketch.png';
-
+import logo2 from './images/logo2.png';
 const HomePage = () => {
   const [dropdownVisible, setDropdownVisible] = useState(false);
 
@@ -144,6 +144,11 @@ const HomePage = () => {
       width: '80%', // Adjust the width as needed
       margin: '20px auto',
     },
+    craftyCanvasHeading: {
+      fontFamily: 'cursive', // Set your desired cursive font here
+      fontSize: '24px',
+      margin: '0',
+    },
   };
 
   const sliderSettings = {
@@ -157,8 +162,9 @@ const HomePage = () => {
       <header style={styles.header} className="header">
         <div style={styles.logo} className="logo">
           {/* Your Logo Image */}
-          <img src={logo} alt="Crafty Canvas" style={{ width: '20%', height: 'auto', margin: '0 ' }}/>
         </div>
+        <img src={logo2} alt="Crafty Canvas" style={{ width: '30%', height: '5%', margin: '0 ', marginLeft: '480px' }}/>
+
         <div style={styles.searchContainer}>
           {/* Search Bar */}
           <div style={styles.searchInputContainer}>

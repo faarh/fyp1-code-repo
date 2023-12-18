@@ -11,7 +11,7 @@ function Signup() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    axios.post('http://127.0.0.1:3001/users', { name, email, password })
+    axios.post('http://127.0.0.1:3001/register', { name, email, password })
       .then(result => {console.log(result)
       navigate('/login')
       })
