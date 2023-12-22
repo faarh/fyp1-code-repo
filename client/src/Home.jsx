@@ -203,7 +203,7 @@ const HomePage = () => {
           </div>
         </div>
         
-        <div
+        {/*<div
           style={styles.authLinks}
           className="auth-links"
         >
@@ -213,7 +213,7 @@ const HomePage = () => {
           <Link to="/register" style={styles.authLink}>
             Sign Up
           </Link>
-        </div>
+  </div>*/}
       </header>
 
       {/* Categories Section with Dropdown */}

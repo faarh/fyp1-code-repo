@@ -19,7 +19,11 @@ const AddArtworkForm = () => {
       [name]: value,
     }));
   };
-
+  const handleImageChange = (e) => {
+    // Handle image upload and set the state
+    const file = e.target.files[0];
+    setReferenceImage(file);
+  };
   const handleArtworkSubmission = () => {
     console.log('Artwork data submitted:', artworkData);
     // You can add logic here to submit the artwork data
@@ -100,7 +104,11 @@ const AddArtworkForm = () => {
               onChange={handleInputChange}
             />
             <br />
-
+            <div>
+          <label>Artwork Image:</label>
+          <input type="file" accept="image/*" onChange={handleImageChange} />
+        </div>
+        <br></br>
         <button type="button" onClick={handleArtworkSubmission}>
           Submit
         </button>
