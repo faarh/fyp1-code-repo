@@ -8,13 +8,25 @@ import helloImage from './images/tree.jpeg';
 import helloImage1 from './images/art222.jpeg';
 import helloImage2 from './images/art222.jpeg';
 import firstartwork from './images/eye.jpg';
-import logo from './images/logo.png';
 import secondArtowrk from './images/oil.jpg';
 import thirdart from './images/starry.jpg';
 import fourthArtwork from './images/sketch.png';
 import logo2 from './images/logo2.png';
+import AddArtworkForm from './AddArtworkForm'
+
+
 const HomePage = () => {
   const [dropdownVisible, setDropdownVisible] = useState(false);
+  const [showForm, setShowForm] = useState(false);
+  const [artworkData, setArtworkData] = useState({
+    name: '',
+    pricingType: 'fixed', // or 'bidding'
+    price: '',
+    startingBid: '',
+    bidEndTime: '',
+    description: '',
+    artistName: '',
+  });
 
   const handleCategoryHover = () => {
     setDropdownVisible(true);
@@ -22,6 +34,24 @@ const HomePage = () => {
 
   const handleCategoryLeave = () => {
     setDropdownVisible(false);
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setArtworkData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+  
+  const sliderSettings = {
+    autoplay: true,
+    autoplaySpeed: 2400,
+  };
+
+  const handleArtworkSubmission = () => {
+    console.log('Artwork data submitted:', artworkData);
+    setShowForm(false);
   };
 
   const styles = {
@@ -151,13 +181,10 @@ const HomePage = () => {
     },
   };
 
-  const sliderSettings = {
-    autoplay: true,
-    autoplaySpeed: 2400,
-  };
 
   return (
     <div style={styles.body} className="home-page">
+      
       {/* Header Section */}
       <header style={styles.header} className="header">
         <div style={styles.logo} className="logo">
@@ -190,8 +217,6 @@ const HomePage = () => {
       </header>
 
       {/* Categories Section with Dropdown */}
-      
-
       <nav
         style={styles.categories}
         className="categories"
@@ -241,12 +266,18 @@ const HomePage = () => {
           </li>
           <li style={styles.categoryItem}>
             <Link to="/CustomizeArtwork" style={styles.categoryLink}>
-              Customize Artwork
+              Comissioned Artwork
             </Link>
           </li>
           {/* Add more categories as needed */}
         </ul>
       </nav>
+      <Link to="/AddArtworkForm">
+        <button>Add New</button>
+      </Link>
+      <Link to="/login" style={{ color: 'white', marginLeft: '10px', textDecoration: 'none' }}>
+            Logout
+          </Link>
       {/* Slider Section */}
       <section style={styles.slider} className="slider">
         <Slider {...sliderSettings}>
@@ -261,7 +292,7 @@ const HomePage = () => {
           </div>
         </Slider>
       </section>
-    
+      
       {/* Featured Artworks Section */}
       <section style={styles.featuredArtworks} className="featured-artworks">
         {/* Featured Artworks */}
