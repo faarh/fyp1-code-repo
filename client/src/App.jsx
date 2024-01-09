@@ -10,7 +10,9 @@ import CustomizationForm from './CustomizeArtwork'; // Import the CustomizationF
 import Calligraphy from './Calligraphy'
 import HomePage from './Home'
 import AddArtworkForm from './AddArtworkForm'
-
+import AddNewForm from './AddNewForm';
+import ContactPage from './Contact';
+import Gallery from './Gallery'
 function App() {
   
 
@@ -27,7 +29,9 @@ function App() {
         <Route path="/CustomizeArtwork" element={<CustomizationForm />} /> {/* Add this line */}
         <Route path="/category/Calligraphy.jsx" element={<Calligraphy />} />
         <Route path="/AddArtworkForm" element={<AddArtworkForm />} />
-
+        <Route path="/AddNewForm" element={<AddNewForm/>} />
+        <Route path="/Contact" element={<ContactPage/>} />
+        <Route path="/Gallery" element={<Gallery/>} />
       </Routes>
       </BrowserRouter>
   )

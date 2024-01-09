@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
-
+import black from './images/black.jpg'
 function Signup() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -20,13 +20,16 @@ function Signup() {
   }
 
   return (
-    <div className="d-flex justify-content-center align-items-center bg-dark vh-100">
+  
+    <div className="d-flex justify-content-center align-items-center bg-dark vh-100" >
       <div className="bg-light p-4 rounded w-50 shadow-lg">
+      <h1 className="mb-4 text-center text-purple font-weight-bold">Crafty Canvas</h1>
         <h2 className="mb-4 text-center text-purple font-weight-bold">Register</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
             <label htmlFor="name" className="form-label text-purple font-weight-bold">
               <strong>Name</strong>
+
             </label>
             <input
               type="text"

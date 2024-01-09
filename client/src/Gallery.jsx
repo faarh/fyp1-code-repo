@@ -15,27 +15,15 @@ import logo2 from './images/logo2.png';
 import pot from './images/pot.png';
 import sea from './images/sea.jpg';
 import sunrise from './images/sunrise.jpeg';
-import town from './images/town.jpg';
+import HomePage from './Home';
 
 import axios from 'axios';
 import AddNewForm from './AddNewForm';
 import ContactPage from './Contact';
 
-const HomePage = () => {
-  const [dropdownVisible, setDropdownVisible] = useState(false);
-  const [showDetails, setShowDetails] = useState(false);
-  const [artworks, setArtworks] = useState([]);
+const Gallery = () => {
+    const [dropdownVisible, setDropdownVisible] = useState(false);
 
-  useEffect(() => {
-    // Fetch artworks when the component mounts
-    axios.get('http://127.0.0.1:3001/getArtworks')
-      .then(response => {
-        setArtworks(response.data);
-      })
-      .catch(error => {
-        console.error('Error fetching artworks:', error);
-      });
-  }, []); 
   const handleCategoryHover = () => {
     setDropdownVisible(true);
   };
@@ -50,35 +38,6 @@ const HomePage = () => {
       ...prevData,
       [name]: value,
     }));
-  };
-
-  const handleArtworkSubmit = async (artworkData) => {
-    try {
-      await axios.post('http://127.0.0.1:3001/api/artworks', artworkData);
-      // Optionally, you can refresh the artworks list here
-      fetchArtworks();
-    } catch (error) {
-      console.error('Error creating artwork:', error);
-    }
-  };
-
-  const fetchArtworks = () => {
-    axios.get('http://127.0.0.1:3001/getArtworks')
-      .then(response => {
-        setArtworks(response.data);
-      })
-      .catch(error => {
-        console.error('Error fetching artworks:', error);
-      });
-  };
-
-  useEffect(() => {
-    fetchArtworks();
-  }, []);
-
-  const sliderSettings = {
-    autoplay: true,
-    autoplaySpeed: 2400,
   };
 
   const styles = {
@@ -206,6 +165,9 @@ const HomePage = () => {
       fontSize: '24px',
       margin: '0',
     },
+    h2:{
+        textAlign:'center',
+    }
   };
 
 
@@ -217,7 +179,7 @@ const HomePage = () => {
         <div style={styles.logo} className="logo">
           {/* Your Logo Image */}
         </div>
-        <img src={logo2} alt="Crafty Canvas" style={{ width: '30%', height: '5%', margin: '0 ', marginLeft: '480px' }}/>
+        <img src={logo2} alt="Crafty Canvas" style={{ width: '30%', height: '5%', margin: '0 ', marginLeft: '480px' }} to="/Home"/>
 
         <div style={styles.searchContainer}>
           {/* Search Bar */}
@@ -265,7 +227,7 @@ const HomePage = () => {
       <nav style={styles.categories} className="categories">
         <ul style={styles.categoryList}>
           <li style={styles.categoryItem}>
-            <Link to="/Gallery" style={styles.categoryLink}>
+            <Link to="/category1" style={styles.categoryLink}>
               Gallery |
             </Link>
           </li>
@@ -288,60 +250,7 @@ const HomePage = () => {
           {/* Add more categories as needed */}
         </ul>
       </nav>
-      <Link to="/AddArtworkForm">
-  <button>Add New    </button>
-</Link>
-
-<Link to="/login" style={{ color: 'white', marginLeft: '10px', textDecoration: 'none' }}>
-            Logout
-      </Link>
-      {/*<AddNewForm onArtworkSubmit={handleArtworkSubmit} />*/}
-
-      {/* Display Artworks */}
-      <section style={styles.featuredArtworks} className="featured-artworks">
-        {artworks.map((artwork) => (
-          <div key={artwork._id} style={{ width: '300px' }} className="artwork">
-            <img style={{ width: '300px' }} src={artwork.image} alt={artwork.name} />
-            <div style={styles.artworkDescription} className="artwork-description">
-              <h3>{artwork.name}</h3>
-              <p>{artwork.description}</p>
-            </div>
-          </div>
-        ))}
-      </section>
-      
-          
-      {/* Slider Section */}
-      <section style={styles.slider} className="slider">
-        <Slider {...sliderSettings}>
-          <div style={{ textAlign: 'center' }}>
-            <img src={helloImage} alt="Slider 1" style={{ width: '60%', height: 'auto', margin: '0 auto' }} />
-          </div>
-          <div>
-            <img src={helloImage1} alt="Slider 1" style={{ width: '60%', height: 'auto', margin: '0 auto' }} />
-          </div>
-          <div>
-            <img src={helloImage2} alt="Slider 1" style={{ width: '60%', height: 'auto', margin: '0 auto' }} />
-          </div>
-        </Slider>
-      </section>
-      
-      {/* Featured Artworks Section */}
-      <section style={styles.featuredArtworks} className="featured-artworks">
-        {/* Featured Artworks */}
-        {artworks.map((artwork, index) => (
-      <div key={index} style={{width: '300px'}} className="artwork">
-        {/* Display artwork details here */}
-      </div>
-      ))}
-      <div style={{width: '300px'}} className="artwork">
-          <img style={{width: '300px'}} src={town} alt="Artwork 1"  /> 
-          <div style={styles.artworkDescription} className="artwork-description">
-            <h3>town</h3>
-            <p>This is a town</p>
-            <p>Price: 50000</p>
-          </div>
-        </div>
+        <h2 style={styles.h2}>Gallery</h2>
         <div style={{width: '300px'}} className="artwork">
           <img style={{width: '300px'}} src={firstartwork} alt="Artwork 1"  /> 
           <div style={styles.artworkDescription} className="artwork-description">
@@ -358,6 +267,7 @@ const HomePage = () => {
             <p>City Artwork.</p>
             <p>Price: RS25000</p>
           </div>
+          
         </div>
 
         <div style={{width: '300px'}} className="artwork">
@@ -405,7 +315,6 @@ const HomePage = () => {
           </div>
         </div>
         {/* Add more artworks as needed */}
-      </section>
 
       {/* Footer Section */}
       <footer style={styles.footer} className="footer">
@@ -415,4 +324,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default Gallery;

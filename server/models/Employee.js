@@ -6,5 +6,14 @@ const EmployeeSchema =new mongoose.Schema({
     password: String
 })
 
-const EmployeeModel =mongoose.model("employees" , EmployeeSchema)
-module.exports=EmployeeModel
+const ArtworkSchema = new mongoose.Schema({
+    name: String,
+    price: String,   
+    description: String,
+    image: String, // Assuming you store image paths or URLs
+  });
+
+  const EmployeeModel =mongoose.model("employees" , EmployeeSchema);
+
+  const ArtworkModel = mongoose.model('artworks', ArtworkSchema);
+  module.exports = { EmployeeModel, ArtworkModel };
